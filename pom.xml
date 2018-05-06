@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>quadra</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <distributionManagement>
+<!--   <snapshotRepository>
+                    <id>snapshots</id>
+                    <name>My internal repository</name>
+                    <url>http://192.168.99.1:8081/nexus/content/repositories/snapshots</url>
+            </snapshotRepository> -->
+  
+ <!-- <repository>
+    <id>releases</id>
+	<name>Releases</name>
+	<url>http://192.168.99.1:8081/nexus/content/repositories/releases</url>
+  </repository> -->
+</distributionManagement>
+  <name>quadra Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+	
+  </dependencies>
+  <build>
+  <plugins>
+  <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>createdir</id>
+                    <phase>process-resources</phase>
+                    <configuration>
+                        <tasks>
+                            <mkdir dir="/opt/webserver/lib/dira"/>
+						</tasks>
+						<target>
+								<touch file="opt/webserver/lib/dira/redeploy.contribution" />
+						</target>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+            </executions>
+</plugin>
+
+
+ </plugins>
+    <finalName>ROOT</finalName>
+  </build>
+ 
+</project>
