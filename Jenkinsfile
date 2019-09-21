@@ -24,7 +24,7 @@ node {
          //Remove maven-build-container if it exisits
         //sh " docker rm -f java-deploy-container"
        
-        sh "docker run --name java-deploy-container --volumes-from maven-build-container -d -p 8080:8080 ramasatrio/warna_color"
+        sh "docker run --name java-deploy-container --volumes-from maven-build-container -d -p 8080:8080 maven-build"
    }
 
 }
