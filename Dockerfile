@@ -9,7 +9,5 @@ WORKDIR /deploy/application
 
 ADD . .
 
-COPY --from=build-image /deploy/application/target/ROOT.war /usr/local/tomcat/webapps/
-
 ENTRYPOINT ["mvn","clean","package"]
 
