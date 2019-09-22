@@ -26,7 +26,7 @@ node {
         //sh " docker rm -f java-deploy-container"
        
         sh "docker run --name java-deploy-container --volumes-from maven-build-container -d -p 8080:8080 tomcat:8.0.51-jre8-alpine"
-		sh "winpty docker exec -it java-deploy-container cp /deploy/application/target/ROOT.war /usr/local/tomcat/webapps/ROOT.war"
+		sh "docker exec java-deploy-container cp /deploy/application/target/ROOT.war /usr/local/tomcat/webapps/ROOT.war"
    }
 
 }
