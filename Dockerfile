@@ -6,6 +6,8 @@ VOLUME ["/deploy/application"]
 
 WORKDIR /deploy/application
 
+COPY  /deploy/application/target/ROOT.war /usr/local/tomcat/webapps/
+
 ADD . .
 
 ENTRYPOINT ["mvn","clean","package"]
