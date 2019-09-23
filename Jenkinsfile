@@ -1,4 +1,3 @@
-
 node {
 
    stage('Clone Repository') {
