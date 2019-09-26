@@ -6,7 +6,7 @@
   <HEAD><TITLE>Setting Colors Code</TITLE></HEAD>
 
   <BODY>
-    <H1>TEST</H1>
+    <H1>Latihan</H1>
     <TABLE BORDER="1" align="center" bgcolor="#E8FDFF"
      weight="50%" height="40%">
       <TH>Color Name:</TH>
