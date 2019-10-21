@@ -27,7 +27,7 @@ node {
 	//	sh "docker cp java-deploy-container:/deploy/application/target/ROOT.war /c/boy/"
 	//	sh "docker cp /c/boy/ROOT.war java-deploy-container:/usr/local/tomcat/webapps/"
 		
-		sh "docker run --name java-deploy-container --volumes-from maven-build-container:/deploy/application/target:/usr/local/tomcat/webapps/ -d -p 8080:8080 tomcat:8.0.51-jre8-alpine"
+		sh "docker run --name java-deploy-container --volumes-from maven-build-container:/deploy/application/target -d -p 8080:8080 tomcat:8.0.51-jre8-alpine"
 	
    }
 
