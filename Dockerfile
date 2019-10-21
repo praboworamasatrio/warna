@@ -8,6 +8,4 @@ WORKDIR /usr/local/tomcat/webapps
 
 ADD . .
 
-ADD target/ROOT.war ROOT.war
-
 ENTRYPOINT ["mvn","clean","package"]
