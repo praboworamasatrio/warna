@@ -1,10 +1,10 @@
 FROM maven:3.5-jdk-8
 
-RUN mkdir -p /usr/local/tomcat/webapps
+RUN mkdir -p /deploy/application
 
-VOLUME ["/usr/local/tomcat/webapps"]
+VOLUME ["/deploy/application"]
 
-WORKDIR /usr/local/tomcat/webapps
+WORKDIR /deploy/application
 
 ADD . .
 
