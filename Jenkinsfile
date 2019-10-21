@@ -23,12 +23,10 @@ node {
          //Remove maven-build-container if it exisits
         sh 'docker rm -f java-deploy-container || echo "remove container if already exist"'
        
-    //    sh "docker run --name java-deploy-container --volumes-from maven-build-container -d -p 8080:8080 tomcat:8.0.51-jre8-alpine"
-	//	sh "docker cp java-deploy-container:/deploy/application/target/ROOT.war /c/boy/"
-	//	sh "docker cp /c/boy/ROOT.war java-deploy-container:/usr/local/tomcat/webapps/"
+        sh "docker run --name java-deploy-container --volumes-from maven-build-container -d -p 8080:8080 tomcat:8.0.51-jre8-alpine"
+		sh "docker cp java-deploy-container:/deploy/application/target/ROOT.war /c/boy/"
+		sh "docker cp /c/boy/ROOT.war java-deploy-container:/usr/local/tomcat/webapps/"
 	
-	//  jika di linux coba mount volume target ke root directory tomcat deployment
-	    sh "docker run --rm -p 8080:8080 -v /deploy/application/target:/usr/local/tomcat/webapps/ --name java-deploy-container tomcat:8.0.51-jre8-alpine"
    }
 
 }
