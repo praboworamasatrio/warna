@@ -33,8 +33,8 @@
   </dependencies>
   <build>
   <plugins>
-  <plugin>
-    <!--        <groupId>org.apache.maven.plugins</groupId>
+  <!--<plugin>
+           <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-antrun-plugin</artifactId>
 	  
             <executions>
@@ -53,8 +53,8 @@
                         <goal>run</goal>
                     </goals>
                 </execution>
-            </executions> -->
-</plugin>
+            </executions> 
+</plugin> -->
 	  
 	     
  </plugins>
