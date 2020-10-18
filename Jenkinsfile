@@ -44,7 +44,7 @@ node('maven'){
    
    //Start Deployment
    sh """
-      oc rollout latest dc/${application} -n ${project}
+      oc rollout latest dc/${application} -n ${project} || echo 'start rollout'
    """
    
 }//node
