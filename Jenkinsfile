@@ -19,7 +19,6 @@ node('maven'){
         oc login --token=${openshiftAuthToken} ${openshiftApiURL} >/dev/null 2>&1 || echo 'OpenShift login failed'
     """
     
-    //git changelog: false, poll: false, url: 'https://github.com/vidhyachari/openshift-hello-nodejs'
     // Checkout the source code
     checkout scm
     
@@ -45,7 +44,6 @@ node('maven'){
    
    //Start Deployment
    sh """
-      oc rollout cancel dc/${application} -n ${project}
       oc rollout latest dc/${application} -n ${project}
    """
    
