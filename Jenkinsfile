@@ -40,7 +40,7 @@ node('maven'){
       oc cancel-build bc/${application} -n ${project}
 
       # Start build and follow logs
-      oc start-build ${application} --follow -n ${project}
+      oc start-build ${application} --follow --wait -n ${project}
     """
    
    //Start Deployment
