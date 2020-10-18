@@ -25,7 +25,7 @@ node('maven'){
     
     sh """
       oc process -f ${openshiftTemplatePath} \
-        NAME=${application} \
+        APPLICATION_NAME=${application} \
         SOURCE_REPOSITORY_REF=${gitBranch} \
         SOURCE_REPOSITORY_URL=${gitURL} \
         CONTEXT_DIR="/" \
